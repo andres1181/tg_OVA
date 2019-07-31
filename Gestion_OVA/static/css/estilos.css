@@ -1,12 +1,29 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 h1 {
   color: #FCA205;
   text-align: center;
 }
 
-header {
-  background-color: #FCA205;
+.centrarCaja1 {
+  width: 80%;
+  position: absolute;
+  top: 200px;
+  left: 10%;
+  right: 10%;
 }
-
+.centrarCaja2 {
+  width: 80%;
+  position: relative;
+  top: 5%;
+  bottom: 5%;
+  left: 10%;
+  right: 10%;
+}
 .enlace {
   background-color: #e4dcdc;
   text-align: center;
@@ -24,4 +41,8 @@ header {
 .fondo2 {
   background-color: #b6acac;
   text-align: center;
+}
+
+.cont {
+
 }
