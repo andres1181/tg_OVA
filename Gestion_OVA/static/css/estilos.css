@@ -4,26 +4,34 @@
   box-sizing: border-box;
 }
 
+* {
+  margin-left: 0;
+  margin-right: 0;
+  font-family: "proxima-nova-soft", "Proxima Nova Soft", Helvetica, Arial, sans-serif;
+}
+
 h1 {
   color: #FCA205;
   text-align: center;
 }
 
 .centrarCaja1 {
-  width: 80%;
+  width: 90%;
   position: absolute;
   top: 200px;
-  left: 10%;
-  right: 10%;
+  left: 5%;
+  right: 5%;
 }
+
 .centrarCaja2 {
-  width: 80%;
+  width: auto;
   position: relative;
-  top: 5%;
+  /* top: 5%;
   bottom: 5%;
-  left: 10%;
-  right: 10%;
+  left: 3%;
+  right: 3%; */
 }
+
 .enlace {
   background-color: #e4dcdc;
   text-align: center;
@@ -43,6 +51,6 @@ h1 {
   text-align: center;
 }
 
-.cont {
-
+.color1 {
+  background-color: #40cb9d;
 }

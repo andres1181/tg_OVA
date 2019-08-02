@@ -3,106 +3,118 @@
 {% block contenido %}
 <div class="container centrarCaja1">
   <div id="accordion">
-    <div class="card border border-warning">
-      <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-        <div class="card-header bg-transparent" id="headingOne">
-          <h5 class="mb-0">
-            Esctructuras de control
-          </h5>
-        </div>
-        <div class="progress">
-          <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
-        </div>
-      </a>
-      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
-          <div class="btn-group-vertical centrarCaja2" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Introducción</button>
-            <button type="button" class="btn btn-secondary">Explicación</button>
-            <button type="button" class="btn btn-secondary">Actividades</button>
-            <button type="button" class="btn btn-secondary">Resumen</button>
-            <button type="button" class="btn btn-secondary">Evaluación</button>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <br>
     <div class="card border border-warning">
       <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <div class="card-header bg-transparent" id="headingTwo">
-          <h5 class="mb-0">
-            Punteros
-          </h5>
-        </div>
-        <div class="progress">
-          <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <div class="row card-header bg-transparent" id="headingTwo">
+          <div class="col">
+            <h5 class=" mb-0">
+              Punteros
+            </h5>
+          </div>
+          <div class="col">
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+          </div>
         </div>
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
         <div class="card-body">
-          <div class="btn-group-vertical centrarCaja2" role="group" aria-label="Basic example">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-intro-tab" data-toggle="pill" href="#pills-intro" role="tab" aria-controls="pills-intro" aria-selected="true">Introducción</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-exp-tab" data-toggle="pill" href="#pills-exp" role="tab" aria-controls="pills-exp" aria-selected="false">Explicación</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-act-tab" data-toggle="pill" href="#pills-act" role="tab" aria-controls="pills-act" aria-selected="false">Actividades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-res-tab" data-toggle="pill" href="#pills-res" role="tab" aria-controls="pills-res" aria-selected="false">Resumen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-eva-tab" data-toggle="pill" href="#pills-eva" role="tab" aria-controls="pills-eva" aria-selected="false">Evaluación</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-intro" role="tabpanel" aria-labelledby="pills-intro-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <div class="tab-pane fade" id="pills-exp" role="tabpanel" aria-labelledby="pills-exp-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <div class="tab-pane fade" id="pills-act" role="tabpanel" aria-labelledby="pills-act-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <div class="tab-pane fade" id="pills-res" role="tabpanel" aria-labelledby="pills-res-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <div class="tab-pane fade" id="pills-eva" role="tabpanel" aria-labelledby="pills-eva-tab">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          </div>
+          <!-- TODO:
+           <div class="btn-group-vertical centrarCaja2" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary">Introducción</button>
             <button type="button" class="btn btn-secondary">Explicación</button>
             <button type="button" class="btn btn-secondary">Actividades</button>
             <button type="button" class="btn btn-secondary">Resumen</button>
             <button type="button" class="btn btn-secondary">Evaluación</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <br>
     <div class="card border border-warning">
       <a data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        <div class="card-header bg-transparent" id="headingThree">
-          <h5 class="mb-0">
-            Polimorfismo
-          </h5>
-        </div>
-        <div class="progress">
-          <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <div class="row card-header bg-transparent" id="headingThree">
+          <div class="col">
+            <h5 class=" mb-0">
+              Polimorfismo
+            </h5>
+          </div>
+          <div class="col">
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+          </div>
         </div>
       </a>
       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
         <div class="card-body">
-          <div class="btn-group-vertical centrarCaja2" role="group" aria-label="Basic example">
+          <!-- <div class="btn-group-vertical centrarCaja2" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary">Introducción</button>
             <button type="button" class="btn btn-secondary">Explicación</button>
             <button type="button" class="btn btn-secondary">Actividades</button>
             <button type="button" class="btn btn-secondary">Resumen</button>
             <button type="button" class="btn btn-secondary">Evaluación</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <br>
     <div class="card border border-warning">
       <a data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-        <div class="card-header bg-transparent" id="headingFour">
-          <h5 class="mb-0">
-            Estilo de programación
-          </h5>
+        <div class="row card-header bg-transparent" id="headingFour">
+          <div class="col">
+            <h5 class=" mb-0">
+              Estilo de programación
+            </h5>
+          </div>
+          <div class="col">
+            <div class="progress">
+              <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+          </div>
+
         </div>
-        <div class="progress">
-          <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
-        </div>
+
       </a>
       <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
         <div class="card-body">
-          <div class="btn-group-vertical centrarCaja2" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Introducción</button>
-            <button type="button" class="btn btn-secondary">Explicación</button>
-            <button type="button" class="btn btn-secondary">Actividades</button>
-            <button type="button" class="btn btn-secondary">Resumen</button>
-            <button type="button" class="btn btn-secondary">Evaluación</button>
-          </div>
+
         </div>
       </div>
     </div>
   </div>
   <br>
-  <div class="clearfix">
+  <!-- TODO: Configurar dos botones 
+ <div class="clearfix">
     <button type="button" class="btn btn-secondary float-left">Regresar</button>
     <button type="button" class="btn btn-secondary float-right">Siguiente</button>
-  </div>
+  </div> -->
 </div>
 {% endblock %}
