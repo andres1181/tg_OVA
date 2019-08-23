@@ -36,10 +36,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+#    'rest_framework',
     'bootstrap4',
+    'usuarios',
     'Gestion_OVA',
-    'Gestion_Usuarios',
+
 ]
+
+AUTH_USER_MODEL = 'usuarios.Usuario'
+
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.TokenAuthentication',
+#     ),
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#     ),
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,7 +70,7 @@ ROOT_URLCONF = 'tg_OVA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Gestion_OVA/templates'],
+        'DIRS': ['Gestion_OVA/templates', 'usuarios/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,11 +103,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'es-co'
 
 TIME_ZONE = 'America/Bogota'
 

@@ -16,9 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from Gestion_OVA import views
+from rest_framework.authtoken import views
+#from Gestion_Usuarios.api import UserAPI
+
 
 urlpatterns = [
-    path('', admin.site.urls),
-    path('curso/', include('Gestion_OVA.urls')),
     path('admin/', admin.site.urls),
+#    path('register/1.0/', include(('Gestion_Usuarios.urls', 'api'))),
+    path('curso/', include('Gestion_OVA.urls')),
+    path('register/', include('usuarios.urls')),
+#    path('api_generate_token/', views.obtain_auth_token),
 ]
