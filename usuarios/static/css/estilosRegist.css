@@ -41,22 +41,22 @@ a:hover {
   color:  #84fab0;
 }
 
-.centrarCaja1 {
+/* .centrarCaja1 {
+  width: 90%;
+  position: absolute;
+  top: 100px;
+  top: 100px;
+  left: 5%;
+  right: 5%;
+} */
+
+.alinearCaja {
   width: 40%;
   position: absolute;
   top: 100px;
   top: 100px;
   left: 55%;
   right: 5%;
-}
-
-.alinearCaja {
-  width: 50%;
-  position: absolute;
-  top: 100px;
-  top: 100px;
-  left: 25%;
-  right: 25%;
 }
 
 .enlace {

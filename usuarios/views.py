@@ -27,6 +27,8 @@ def registro(request):
         else:
             print('Las contraseñas no coinciden')
 
-            return redirect('/curso/index')
+        return redirect('curso/index')
+        #render(request, 'index.html', {})
+            #redirect('/curso/index')
     else:
         return render(request, 'registro.html', {})
