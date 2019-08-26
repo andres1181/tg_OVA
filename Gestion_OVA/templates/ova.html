@@ -1,40 +1,111 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-<div class="app">
-  <aside class="sidebar">
-    <header>
-      IPOO
-    </header>
-    <nav class="sidebar-nav">
-
-      <ul>
-        <li>
-          <a href="#"><i class="ion-bag"></i> <span>Introducción</span></a>
+<br>
+<div class="container bg-white div_tema p-5 shadow align-self-center">
+  <h2 class="h5 font-weight-bold text-center mb-4">Tema N° 1: Polimorfismo</h2>
+  <div class="row">
+    <div class="col-3 ">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Introducción</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Lección</a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Actividades</a>
+        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Resumen</a>
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="tab-content" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+        </div>
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>
+      </div>
+    </div>
+  </div>
+  <!-- <header>
+    <nav class="navbar navbar-expand-lg navbar-light nav-ova">
+      <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto ml-auto text-center row" role="tablist">
+          <div class="col nav-item">
+            <a class="nav-link" href="#intro" role="tab">
+              <h5>Introducción</h5><span class="sr-only">(current)</span>
+            </a>
+          </div>
+          <div class="col nav-item">
+            <a class="nav-link" href="#" role="tab">
+              <h5>Lección</h5>
+            </a>
+          </div>
+          <div class="col nav-item">
+            <a class="nav-link" href="#act" role="tab">
+              <h5>Actividades</h5>
+            </a>
+          </div>
+          <div class="col nav-item">
+            <a class="nav-link" href="#">
+              <h5>Resumen</h5>
+            </a>
+          </div>
+        </div>
+      </div> -->
+  <!-- <ul class="navbar-nav mr-auto text-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Introducción <span class="sr-only">(current)</span></a>
         </li>
-        <li>
-          <a href="#"><i class="ion-ios-settings"></i> <span class="">Lección</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Lección</a>
         </li>
-        <li>
-          <a href="#"><i class="ion-ios-briefcase-outline"></i> <span class="">Actividades</span></a>
-          <ul class="nav-flyout">
-            <li>
-              <a href="#"><i class="ion-ios-flame-outline"></i>Actividades de contextualización</a>
-            </li>
-            <li>
-              <a href="#"><i class="ion-ios-lightbulb-outline"></i>Actividades de evaluación</a>
-            </li>
-          </ul>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Actividades
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Actividades</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Evaluación</a>
+          </div>
         </li>
-        <li>
-          <a href="#"><i class="ion-ios-analytics-outline"></i> <span class="">Resumen</span></a>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
     </nav>
-  </aside>
-</div>
-<div class="content d-inline">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </header>
+  <!-- <div class="info" id="content-ova" role="tabpanel">
+    <div class="" id="intro">
+      <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+      {% block resumen %} {% endblock %}
+    </div>
+    <div class="" id="leccion" role="tabpanel">
+      {% block leccion %} {% endblock %}
+    </div>
+    <div class="" id="act" role="tabpanel">
+      {% block actividades %} {% endblock %}
+    </div>
+    <div class="" id="resumen" role="tabpanel">
+      {% block Resumen %}{% endblock %}
+    </div>
+  </div> -->
+  <br>
+  <div class="btn-group btn-group-toggle align-self-center" data-toggle="buttons">
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option1" autocomplete="off" checked> Anterior
+    </label>
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="option2" autocomplete="off"> Siguiente
+    </label>
+  </div>
 </div>
 {% endblock %}

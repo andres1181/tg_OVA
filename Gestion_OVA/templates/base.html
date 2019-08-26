@@ -16,11 +16,38 @@
   {# CSS Bootstrap #}
   {% bootstrap_css %}
   <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
-  
+
 </head>
 
 <header>
-  {% block header %} {% endblock %}
+  <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <a class="navbar-brand" href="index">
+      <img src="{% static 'images/pagina-de-c-.svg' %}" width="70" height="50" class="d-inline-block align-center" alt="Logo"> POO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <div class="navbar-nav mr-auto ml-auto text-center">
+        <a class="nav-link" href="index">
+          <h6>Inicio</h6>
+        </a>
+        <a class="nav-link" href="#">
+          <h6>Acerca de</h6>
+        </a>
+        <a class="nav-link" href="#">
+          <h6>Ayuda</h6>
+        </a>
+      </div>
+      <div class="d-flex flex-now justify-content-center nav-item dropdown">
+        <a href="#" class="nav-link btn btn-outline-light mr-2 dropdown-toggle text" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Perfil</a>
+        <div class="dropdown-menu dropdown-menu-right ">
+          <a class="dropdown-item" href="#">Editar Perfil</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Cerrar Sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 </header>
 
