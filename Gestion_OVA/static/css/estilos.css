@@ -7,11 +7,20 @@
   font-family: "proxima-nova-soft", "Proxima Nova Soft", Helvetica, Arial, sans-serif;
 }
 
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: open sans, sans-serif
+}
+
 body {
-  background: #84fab0;
-  background: -webkit-linear-gradient(to right, #84fab0, #8fd3f4);
-  background: linear-gradient(to right, #84fab0, #8fd3f4);
+  margin: 0;
+  background: #74F59F;
+  background: -webkit-linear-gradient(to right, #74F59F, #49A6E9);
+  background: linear-gradient(to right, #74F59F, #49A6E9);
   min-height: 100vh;
+}
+
+nav {
+  margin-top: 15px;
 }
 
 h3, h2, h6 {
@@ -19,6 +28,9 @@ h3, h2, h6 {
   text-align: center;
 }
 
+a h6{
+  color: #ffffff;
+}
 h4 {
   color: #414949;
   text-align: center;
@@ -78,9 +90,9 @@ a:hover {
 /* div con enlace a los temas */
 .div_tema {
   color: #2c3e50;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
 .color1 {
@@ -93,9 +105,9 @@ a:hover {
   /*Color principa 2*/
 }
 
-nav {
+/* nav {
   background-color: #414949;
-}
+} */
 
 /*Estilos para barra de progreso*/
 .progress {
@@ -169,3 +181,140 @@ nav {
 }
 
 /*Fin*/
+@import "bourbon";
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600);
+
+a li {
+  text-decoration: none;
+  @include transition(all 0.6s ease);
+
+  &:hover{
+     @include transition(all 0.6s ease);
+  }
+}
+
+.app{
+  height: 100vh;
+}
+.content{
+  width: 75%;
+}
+/* -------------
+Sidebar
+----------------*/
+.sidebar {
+  position: absolute;
+  //width: 33.3333%;
+  width: 25%;
+  height: 100%;
+  top: 0;
+  overflow:hidden;
+  background-color: #19222a;
+  -webkit-transform: translateZ(0);
+  visibility: visible;
+  -webkit-backface-visibility: hidden;
+
+  header{
+    background-color: #09f;
+    width: 100%;
+    display:block;
+    padding: 0.75em	1em;
+  }
+}
+
+/* -------------
+Sidebar Nav
+----------------*/
+.sidebar-nav {
+  position: fixed;
+  //width: 13em;
+  background-color: #19222a;
+  height: 100%;
+  font-weight: 400;
+  font-size: 1.2em;
+  overflow: auto;
+  padding-bottom: 6em;
+  z-index: 9;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+
+
+  ul{
+    list-style:none;
+    display: block;
+    padding: 0;
+    margin: 0;
+
+    li{
+      margin-left: 0;
+      padding-left: 0;
+      //min-width: 13em;
+      display:inline-block;
+      width: 100%;
+
+      a{
+        color: rgba(255,255,255,0.9);
+        font-size: 0.75em;
+        padding: 1.05em	1em;
+        position: relative;
+        display:block;
+
+        &:hover{
+          background-color: rgba(0,0,0,0.9);
+          @include transition(all 0.6s ease);
+        }
+      }
+/* -------------
+Sidebar: icons
+----------------*/
+      i{
+        font-size: 1.8em;
+        padding-right: 0.5em;
+        width: 9em;
+        display: inline;
+        vertical-align:middle;
+      }
+    }
+  }
+
+/* -------------
+Chev elements
+----------------*/
+  & > ul > li > a:after {
+    content: '\f125';
+    font-family: ionicons;
+    font-size: 0.5em;
+    width: 10px;
+    color: #fff;
+    position: absolute;
+    right: 0.75em;
+    top: 45%;
+  }
+/* -------------
+Nav-Flyout
+----------------*/
+  & .nav-flyout {
+    position: absolute;
+    background-color: #080D11;
+    z-index: 9;
+    left: 2.5em;
+    top: 0;
+    height: 100vh;
+    @include transform(translateX(100%));
+    @include transition(all 0.5s ease);
+
+    a:hover{
+      background-color: rgba(255,255,255, 0.05)
+    }
+  }
+
+/* -------------
+Hover
+----------------*/
+  & ul > li:hover{
+      .nav-flyout{
+      @include transform(translateX(0));
+        @include transition(all 0.5s ease);
+    }
+  }
+}

@@ -1,5 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block header %}
+<nav class="navbar navbar-expand-md navbar-dark sticky-top">
+  <a class="navbar-brand" href="index">
+    <img src="{% static 'images/pagina-de-c-.svg' %}" width="70" height="50" class="d-inline-block align-center" alt="Logo"> POO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <div class="navbar-nav mr-auto ml-auto text-center">
+      <a class="nav-link" href="index">
+        <h6>Inicio</h6>
+      </a>
+      <a class="nav-link" href="#">
+        <h6>Acerca de</h6>
+      </a>
+      <a class="nav-link" href="#">
+        <h6>Ayuda</h6>
+      </a>
+    </div>
+    <div class="d-flex flex-now justify-content-center nav-item dropdown">
+      <a href="#" class="nav-link btn btn-outline-light mr-2 dropdown-toggle text" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Perfil</a>
+      <div class="dropdown-menu dropdown-menu-right ">
+        <a class="dropdown-item" href="#">Editar Perfil</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <a class="dropdown-item" href="#">Something else here</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Cerrar Sesión</a>
+      </div>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
 {% block contenido %}
 <div class="container centrarCaja1">
   <!-- <div class="d-flex flex-now justify-content-center">
@@ -9,7 +43,7 @@
   </div> -->
   <div class="row">
     <div class="col-xl-4 col-lg-6 mb-4 ">
-      <a href="tema">
+      <a href="ova">
         <div class="bg-white div_tema p-5 shadow ">
 
           <h2 class="h5 font-weight-bold text-center mb-4">Tema N° 1</h2>
@@ -99,120 +133,5 @@
       </a>
     </div>
   </div>
-  <!-- <div id="accordion">
 
-    <a href="#">
-      <div class="border">
-        <div class="d-flex flex-now  bg-transparent">
-          <div class="p-2">
-            <img src="{% static 'images/pagina-de-c-.svg' %}" width="70" height="50" class="d-inline-block align-center" alt="Logo">
-          </div>
-          <div class="p-2 d-flex flex-now align-items-center">
-            <div class="p-2">
-              <h3>Tema 01:</h3>
-            </div>
-            <div class="p-2">
-              <h4>Polimorfismo</h4>
-            </div>
-          </div>
-          <div class="ml-auto p-2">
-            <div class="progress">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <br>
-    <div class="card border">
-      <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        <div class="card-header d-flex flex-now  bg-transparent" id="headingTwo">
-          <div class="">
-            <img src="{% static 'images/pagina-de-c-.svg' %}" width="70" height="50" class="d-inline-block align-center" alt="Logo">
-          </div>
-          <div class="d-flex flex-now align-items-center">
-            <div class="p-2">
-              <h3>Tema 01:</h3>
-            </div>
-            <div class="p-2">
-              <h4>Polimorfismo</h4>
-            </div>
-          </div>
-        </div>
-      </a>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">
-          <div class="d-flex">
-            <div class="mr-auto d-inline-flex p-2">
-              <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
-              </div>
-            </div>
-            <div class="ml-auto p-2">
-              <a href="#" class="nav-link btn btn-outline-light" role="button">Iniciar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="card border border-warning">
-      <a data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        <div class="row card-header bg-transparent" id="headingThree">
-          <div class="col">
-            <h5 class=" mb-0">
-              Polimorfismo
-            </h5>
-          </div>
-          <div class="col">
-            <div class="progress">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
-          </div>
-        </div>
-      </a>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-          <div class="btn-group-vertical centrarCaja2" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Introducción</button>
-            <button type="button" class="btn btn-secondary">Explicación</button>
-            <button type="button" class="btn btn-secondary">Actividades</button>
-            <button type="button" class="btn btn-secondary">Resumen</button>
-            <button type="button" class="btn btn-secondary">Evaluación</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    <div class="card border border-warning">
-      <a data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-        <div class="row card-header bg-transparent" id="headingFour">
-          <div class="col">
-            <h5 class=" mb-0">
-              Estilo de programación
-            </h5>
-          </div>
-          <div class="col">
-            <div class="progress">
-              <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
-          </div>
-
-        </div>
-
-      </a>
-      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body">
-
-        </div>
-      </div>
-    </div>
-    <br>
-  </div> -->
-  <!-- TODO: Configurar dos botones
-<div class="clearfix">
-  <button type="button" class="btn btn-secondary float-left">Regresar</button>
-  <button type="button" class="btn btn-secondary float-right">Siguiente</button>
-</div> -->
   {% endblock %}

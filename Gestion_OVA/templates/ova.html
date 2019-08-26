@@ -1,75 +1,40 @@
-
 {% extends 'base.html' %}
 
 {% block contenido %}
-<div class="container align-items-center">
-  <div class="row inline">
-    <!-- Div que contiene el titulo -->
-    <div class="col-lg-12 col-md-12 col-12"> <h1>  OVA IPOO </h1></div>
-  </div>
-  <!-- Cada div represemta un OVA o tema del Curso NOTA: Luego se deben crear mediante un <script> -->
-  <div class="row inline align-items-center">
-    <div class="col-lg-12 col-md-12 col">
-      <!-- Tema 1 -->
-      <a>
-        <!-- Enlace al OVA -->
-        <div class="row inline-block">
-          <!-- Contenedor de los OVAS -->
-          <div></div><!-- Imagen de los OVAS -->
-          <div>
-            <h1> Introducción </h1>
-          </div><!-- Titulo del tema(texto) -->
-        </div>
-    </div>
-    <div class="col-lg-12 col-md-12 col">
-      <!-- Tema 2 -->
-      <a>
-        <!-- Enlace al OVA -->
-        <div class="row inline-block">
-          <!-- Contenedor de los OVAS -->
-          <div></div><!-- Imagen de los OVAS -->
-          <div>
-            <h1> Lección  </h1>
-          </div><!-- Titulo del tema(texto) -->
-        </div>
-    </div>
-    <div class="col-lg-12 col-md-12 col">
-      <!-- Tema 3 -->
-      <a>
-        <!-- Enlace al OVA -->
-        <div class="row inline-block">
-          <!-- Contenedor de los OVAS -->
-          <div></div><!-- Imagen de los OVAS -->
-          <div>
-            <h1> Actividades </h1>
-          </div><!-- Titulo del tema(texto) -->
-        </div>
-    </div>
-    <div class="col-lg-12 col-md-12 col">
-      <!-- Tema 4 -->
-      <a>
-        <!-- Enlace al OVA -->
-        <div class="row inline-block">
-          <!-- Contenedor de los OVAS -->
-          <div></div><!-- Imagen de los OVAS -->
-          <div>
-            <h1> Resumen </h1>
-          </div><!-- Titulo del tema(texto) -->
-        </div>
-    </div>
-    <div class="col-lg-12 col-md-12 col">
-      <!-- Tema 4 -->
-      <a>
-        <!-- Enlace al OVA -->
-        <div class="row inline-block">
-          <!-- Contenedor de los OVAS -->
-          <div></div><!-- Imagen de los OVAS -->
-          <div>
-            <h1> Evaluación </h1>
-          </div><!-- Titulo del tema(texto) -->
-        </div>
-    </div>
+<div class="app">
+  <aside class="sidebar">
+    <header>
+      IPOO
+    </header>
+    <nav class="sidebar-nav">
 
-  </div>
+      <ul>
+        <li>
+          <a href="#"><i class="ion-bag"></i> <span>Introducción</span></a>
+        </li>
+        <li>
+          <a href="#"><i class="ion-ios-settings"></i> <span class="">Lección</span></a>
+        </li>
+        <li>
+          <a href="#"><i class="ion-ios-briefcase-outline"></i> <span class="">Actividades</span></a>
+          <ul class="nav-flyout">
+            <li>
+              <a href="#"><i class="ion-ios-flame-outline"></i>Actividades de contextualización</a>
+            </li>
+            <li>
+              <a href="#"><i class="ion-ios-lightbulb-outline"></i>Actividades de evaluación</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="ion-ios-analytics-outline"></i> <span class="">Resumen</span></a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
+<div class="content d-inline">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 {% endblock %}

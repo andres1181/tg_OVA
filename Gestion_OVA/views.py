@@ -4,8 +4,8 @@ from django.shortcuts import render, render_to_response
 def index(resquest):
     return render(resquest, 'index.html', {})
 
-def temas(resquest):
-    return render(resquest, 'tema.html', {})
+def ova(resquest):
+    return render(resquest, 'ova.html', {})
 
 #def index(resquest):
 #    return render_to_response('index.html')

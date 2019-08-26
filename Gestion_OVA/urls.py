@@ -18,5 +18,5 @@ from . import views
 
 urlpatterns = [
     path('index', views.index),
-    path('tema', views.temas),
+    path('ova', views.ova),
 ]
