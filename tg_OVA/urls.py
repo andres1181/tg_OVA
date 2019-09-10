@@ -22,8 +22,9 @@ from rest_framework.authtoken import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-#    path('register/1.0/', include(('Gestion_Usuarios.urls', 'api'))),
-    path('curso/', include('Gestion_OVA.urls')),
-    path('register/', include('usuarios.urls')),
-#    path('api_generate_token/', views.obtain_auth_token),
+    path('api_usuarios/1.0/', include(('usuarios.urls', 'api'))),
+# #    path('register/1.0/', include(('Gestion_Usuarios.urls', 'api'))),
+#     path('curso/', include('Gestion_OVA.urls')),
+#     path('register/', include('usuarios.urls')),
+    path('api_generate_token/', views.obtain_auth_token),
 ]

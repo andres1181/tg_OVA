@@ -17,6 +17,8 @@ body {
   background: -webkit-linear-gradient(to right, #74F59F, #49A6E9);
   background: linear-gradient(to right, #74F59F, #49A6E9);
   min-height: 100vh;
+
+/*https://mycolor.space/gradient*/
 }
 
 nav {
