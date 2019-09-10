@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 from Gestion_OVA import views
 from rest_framework.authtoken import views
+from usuarios.views import Login
 #from Gestion_Usuarios.api import UserAPI
 
 
@@ -27,4 +28,5 @@ urlpatterns = [
 #     path('curso/', include('Gestion_OVA.urls')),
 #     path('register/', include('usuarios.urls')),
     path('api_generate_token/', views.obtain_auth_token),
+    path('login/', Login.as_view())
 ]
