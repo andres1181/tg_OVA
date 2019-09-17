@@ -1,4 +1,4 @@
-"""tg_OVA URL Configuration
+"""tg_ova URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -14,9 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import include, path
-from . import views
+from .views import *
 
 urlpatterns = [
-    path('index', views.index),
-    path('ova', views.ova),
+    path('Objeto/', ObjetoList.as_view(), name = 'objeto_list'),
+    path('Objeto/<int:pk>', ObjetoDetail.as_view(), name = 'objeto_detail'),
+    path('Subtema/', SubtemaList.as_view(), name = 'subtema_list'),
+    path('Subtema/<int:pk>', SubtemaDetail.as_view(), name = 'subtema_detail'),
+    path('Pregunta/', PreguntaList.as_view(), name = 'pregunta_list'),
+    path('Pregunta/<int:pk>', PreguntaDetail.as_view(), name = 'pregunta_detail'),
+    path('RespuestaPregunta/', RespuestaPreguntaList.as_view(), name = 'respuestaPregunta_list'),
+    path('RespuestaPregunta/<int:pk>', RespuestaPreguntaDetail.as_view(), name = 'respuestaPregunta_detail'),
+    path('RespuestaEstudiante/', RespuestaEstudianteList.as_view(), name = 'respuestaEstudiante_list'),
+    path('RespuestaEstudiante/<int:pk>', RespuestaEstudianteDetail.as_view(), name = 'RespuestaEstudiante_detail'),
+    path('Grupo/', GrupoList.as_view(), name = 'grupo_list'),
+    path('Grupo/<int:pk>', GrupoDetail.as_view(), name = 'Grupo_detail'),
 ]

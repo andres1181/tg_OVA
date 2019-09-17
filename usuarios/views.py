@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect
 from rest_framework import generics
 from rest_framework.authtoken.models import Token
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.views import APIView
+from rest_framework import status
+from rest_framework.response import Response
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
@@ -11,7 +16,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 from .models import *
 #from django.contrib.auth.models import User, auth
-from .serializers import EstudianteSerializer
+from .serializers import *
 #----------------------------------------------------------------------------------
 # def registro(request):
 #
@@ -48,6 +53,26 @@ from .serializers import EstudianteSerializer
 class EstudianteList(generics.ListCreateAPIView):
     queryset = Estudiante.objects.all()
     serializer_class = EstudianteSerializer
+    permission_classes = (IsAuthenticated, )
+    authentication_class = (TokenAuthentication,)
+
+class EstudianteDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Estudiante.objects.all()
+    serializer_class = EstudianteSerializer
+    permission_classes = (IsAuthenticated, )
+    authentication_class = (TokenAuthentication,)
+
+class DocenteList(generics.ListCreateAPIView):
+    queryset = Docente.objects.all()
+    serializer_class = DocenteSerializer
+    permission_classes = (IsAuthenticated, )
+    authentication_class = (TokenAuthentication,)
+
+class DocenteDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Docente.objects.all()
+    serializer_class = DocenteSerializer
+    permission_classes = (IsAuthenticated, )
+    authentication_class = (TokenAuthentication,)
 
 class Login(FormView):
     template_name = "login.html"
@@ -63,9 +88,15 @@ class Login(FormView):
         else:
             return super(Login,self).dispatch(request, *args, *kwargs)
 
-    def form_valid(self, forms):
+    def form_valid(self, form):
         user = authenticate(username = form.cleaned_data['username'], password = form.cleaned_data['password'])
         token,_ = Token.objects.get_or_create(user = user)
         if token:
             login(self.request, form.get_user())
             return super(Login, self).form_valid(form)
+
+class Logout(APIView):
+    def get(self, request, format = None):
+        request.user.auth_token.delete()
+        logout(request)
+        return Response(status = status.HTTP_200_OK)

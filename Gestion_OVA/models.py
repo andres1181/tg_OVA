@@ -1,11 +1,15 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Objeto(models.Model):
 
     id = models.AutoField(primary_key = True)
     introduccion = models.CharField(max_length=200)
     resumen = models.CharField(max_length=200)
-    avance = models.CharField(max_length=200)
+    avance = models.IntegerField(default=0,  validators=[
+            MaxValueValidator(100),
+            MinValueValidator(0)
+        ])
     estado = models.CharField(max_length=200)
 
 
@@ -37,4 +41,6 @@ class Grupo(models.Model):
     objetos_virtuales = models.ManyToManyField(Objeto)
     cod_grupo = models.CharField(unique=True, max_length=10)
     fecha_creacion = models.DateField()
-    num_estudiantes = models.IntegerField()
+    num_estudiantes = models.IntegerField(default=0,  validators=[
+            MinValueValidator(0)
+        ])

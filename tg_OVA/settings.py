@@ -28,6 +28,11 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+CORS_ORIGIN_ALLOW_ALL =True
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8080'
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -47,14 +52,14 @@ INSTALLED_APPS = [
 #AUTH_USER_MODEL = 'usuarios.Usuario'
 
 
-REST_FRAMEWORK = {#
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    ),
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-}
+# REST_FRAMEWORK = {#
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.TokenAuthentication',
+#     ),
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#     ),
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -64,6 +69,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'tg_OVA.urls'
@@ -71,7 +78,7 @@ ROOT_URLCONF = 'tg_OVA.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Gestion_OVA/templates', 'usuarios/templates'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
