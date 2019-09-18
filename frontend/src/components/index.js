@@ -6,7 +6,7 @@ Vue.component('bar-nave', {
 })
 
 Vue.component('leccion', {
-  template: require('./component_leccion/leccion_component.html'),
+  template: require('./component_leccion/menu_lecciones.html'),
   props: ['subtema', 'numero', 'estado']
   // `<div>A custom component! xcxc</div>`
 })
