@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import list-ova from '@/components/ova/list-ova'
-import component_ova from '@/components/ova/component_ova'
+import list_ova from '@/components/ova/list_ova.vue'
+import component_ova from '@/components/ova/component_ova.vue'
 
 
 Vue.use(Router)
@@ -11,8 +11,8 @@ export default new Router({
     routes: [
         {
             path: '/ovas',
-            name: 'list-ova',
-            component: list-ova
+            name: 'list_ova',
+            component: list_ova
         },
         {
             path: '/ovas/ova',

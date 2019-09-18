@@ -22,8 +22,8 @@ class ObjetoDetail(generics.RetrieveUpdateDestroyAPIView):
 class SubtemaList(generics.ListCreateAPIView):
     queryset = Subtema.objects.all()
     serializer_class = SubtemaSerializer
-    permission_classes = (IsAuthenticated, )
-    authentication_class = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated, )
+    # authentication_class = (TokenAuthentication,)
 
 class SubtemaDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Subtema.objects.all()

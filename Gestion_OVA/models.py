@@ -4,6 +4,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class Objeto(models.Model):
 
     id = models.AutoField(primary_key = True)
+    titulo =  models.CharField(null=True, max_length=200)
     introduccion = models.CharField(max_length=200)
     resumen = models.CharField(max_length=200)
     avance = models.IntegerField(default=0,  validators=[
@@ -16,6 +17,7 @@ class Objeto(models.Model):
 class Subtema(models.Model):
     id = models.AutoField(primary_key = True)
     id_ova = models.ForeignKey(Objeto, on_delete=models.CASCADE)
+    titulo =  models.CharField(null=True, max_length=200)
     contenido =  models.CharField(max_length=200)
 
 class Pregunta(models.Model):

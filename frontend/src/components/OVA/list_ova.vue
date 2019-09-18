@@ -31,7 +31,7 @@
 
 </script>
 
-<template lang="html">
+<template>
 
 	<div class="container">
 		<div class="row">
