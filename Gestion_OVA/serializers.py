@@ -11,6 +11,11 @@ class SubtemaSerializer(serializers.ModelSerializer):
         model = Subtema
         fields = '__all__'
 
+class SlideSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Slide
+        fields = '__all__'
+
 class PreguntaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pregunta

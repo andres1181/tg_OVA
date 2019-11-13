@@ -1,0 +1,15 @@
+.slide_ {
+padding-left: 58px;
+padding-right: 58px;
+}
+.negrita_ {
+  font-weight: bold;
+}
+
+.titulo_ {
+  font-family: 'Dosis';
+}
+
+.subrayar_ {
+  text-decoration: underline double;
+}

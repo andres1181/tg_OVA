@@ -2,9 +2,9 @@ from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.views import APIView
-from .serializers import ObjetoSerializer, SubtemaSerializer, PreguntaSerializer, PreguntaSerializer, RespuestaPreguntaSerializer, RespuestaEstudianteSerializer, GrupoSerializer
+from .serializers import ObjetoSerializer, SubtemaSerializer, PreguntaSerializer, PreguntaSerializer, RespuestaPreguntaSerializer, RespuestaEstudianteSerializer, GrupoSerializer, SlideSerializer
 
-from .models import Objeto, Subtema, Pregunta, RespuestaPregunta, RespuestaEstudiante, Grupo
+from .models import Objeto, Subtema, Pregunta, RespuestaPregunta, RespuestaEstudiante, Grupo, Slide
 
 
 class ObjetoList(generics.ListCreateAPIView):
@@ -28,6 +28,20 @@ class SubtemaList(generics.ListCreateAPIView):
 class SubtemaDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Subtema.objects.all()
     serializer_class = SubtemaSerializer
+    permission_classes = (IsAuthenticated, )
+    authentication_class = (TokenAuthentication,)
+
+#---------------------------------------------------------------------------
+
+class SlideList(generics.ListCreateAPIView):
+    queryset = Slide.objects.all()
+    serializer_class = SlideSerializer
+    # permission_classes = (IsAuthenticated, )
+    # authentication_class = (TokenAuthentication,)
+
+class SlideDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Slide.objects.all()
+    serializer_class = SlideSerializer
     permission_classes = (IsAuthenticated, )
     authentication_class = (TokenAuthentication,)
 
