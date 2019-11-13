@@ -29,16 +29,23 @@
 						<li value="1">Dos o más funciones pueden compartir un nombre.</li>
 						<li>En la declaración los tipos de parámetros sean diferentes.</li>
 					</ol>
+					<p>Veamos un ejemplo de sobrecarga de funciones:
+						<br> Supongamos que queremos construir una función que permita conocer el volumen de un cubo. Dicha función recibiria
+						el valor de una de las aristas de tipo entero y esta se multiplicaria tres veces.
+					</p>
 				</div>
 			</slide>
 			<slide>
 				<div class="slide_">
-					<h3 class="titulo_">¿Qué es el Polimorfismo?</h3>
-					<p>En su significado general, el polimorfismo se refiere a la cualidad que tiene algo de tomar múltiples formas o diferentes
-						estados. El polimorfismo es un concepto utilizado en diferentes áreas, tales como la quimica, biologia, bioquimica,
-						genetica e informática. <br> Etimológicamente la palabra polimorfismo tiene origen en el griego: <br>
-						<span class="negrita_">Poli (Muchos)  + Morfo (Forma) +  Ismo( Actividad)</span>
+					<h3 class="titulo_">Ejemplo</h3>
+					<p>Hasta hora el planteamiento es correcto, pero si una persona ingresa un tipo de dato numero que no sea entero, se presentaria un
+						error. Para solucionar este error podemos recurrir a la sobrecarga de la función <em>volumen</em> por cada tipo de dato, asi:
 					</p>
+					<div class="">
+						<img src="" alt="">
+						<img src="" alt="">
+					</div>
+					<p>De esta forma se ejecutara la función que corresponda al tipo de dato ingresado por el ususario.</p>
 				</div>
 			</slide>
 			<slide id="Conceptos">
