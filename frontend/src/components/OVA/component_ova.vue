@@ -230,7 +230,7 @@
 
 	.CajaPadre {
 		width: 90%;
-		height: auto;
+		height: 100%;
 		padding-top: 50px !important;
 		position: absolute;
 		/* left: 5%;

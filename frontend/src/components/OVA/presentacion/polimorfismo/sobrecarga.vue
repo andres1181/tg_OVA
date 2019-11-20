@@ -3,13 +3,18 @@
 	import { Hooper, Slide, Navigation as HooperNavigation, Pagination as HooperPagination } from 'hooper'
 	import 'hooper/dist/hooper.css'
 
+	import OpcionMultiple from '@/components/preguntas/opcionMultiple.vue'
+	import falsoVerdadero from '@/components/preguntas/falsoYverdadero.vue'
+
 	export default {
 		name: 'sobrecarga',
 		components: {
 			Hooper,
 			Slide,
 			HooperNavigation,
-			HooperPagination
+			HooperPagination,
+			OpcionMultiple,
+			falsoVerdadero
 		}
 	}
 
@@ -37,9 +42,10 @@
 			</slide>
 			<slide>
 				<div class="slide_">
-					<h3 class="titulo_">Ejemplo</h3>
-					<p>Hasta hora el planteamiento es correcto, pero si una persona ingresa un tipo de dato numero que no sea entero, se presentaria un
-						error. Para solucionar este error podemos recurrir a la sobrecarga de la función <em>volumen</em> por cada tipo de dato, asi:
+					<h3 class="titulo_">Ejemplo sobrecarga de funciones:</h3>
+					<p>Hasta hora el planteamiento es correcto, pero si una persona ingresa un tipo de dato numero que no sea entero, se presentaria
+						un error. Para solucionar este error podemos recurrir a la sobrecarga de la función <em>volumen</em> por cada tipo de
+						dato, asi:
 					</p>
 					<div class="">
 						<img src="" alt="">
@@ -48,71 +54,59 @@
 					<p>De esta forma se ejecutara la función que corresponda al tipo de dato ingresado por el ususario.</p>
 				</div>
 			</slide>
-			<slide id="Conceptos">
+			<slide>
+				<iframe height="400px"
+				        width="100%"
+				        src="https://repl.it/repls/EuphoricSunnyExtraction?lite=true"
+				        scrolling="no"
+				        frameborder="no"
+				        allowtransparency="true"
+				        allowfullscreen="true"
+				        sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+			</slide>
+			<slide>
 				<div class="slide_">
-					<h3 class="titulo_">¿Qué es el Polimorfismo?</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos. Sin embargo, antes de explicar en
-						qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios
-						para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-					</p>
-					<ol>
-						<li value="1"> Herencia</li>
-						<li>Funciones virtuales</li>
-						<li>Constructores virtuales</li>
-						<li>Destructores virtuales</li>
-						<li>Clases abstractas</li>
-					</ol>
+					<h3 class="titulo_">Pregunta</h3>
+					<div class="">
+						<!-- Se elige aleatoriamente una pregunta de cualquier tipo-->
+
+					</div>
+					<OpcionMultiple :pregunta="'Se requiere de un programa que calcule el área de una figura geométrica puede se de dos o tres dimensiones. ¿Cual de los siguientes fragmentos de código debería utilizarse para que haya Sobrecarga?:'"
+
+					                :opcion1="'Codigo 1'"
+					                :opcion2="'Codigo 2'"
+					                :opcion3="'Codigo 3'"
+					                :opcionCorrecta="'Codigo 4'" />
 				</div>
 			</slide>
 			<slide>
 				<div class="slide_">
-					<h3 class="titulo_">Herencia</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos. Sin embargo, antes de explicar en
-						qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios
-						para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-					</p>
-					<b-button block href="#" v-on:click="componenteActual = 'introduccion'" variant="info">Introducción</b-button>
+					<h3 class="titulo_">Pregunta</h3>
+					<falsoVerdadero :pregunta="'Se requiere de un programa que calcule el área de una figura geométrica puede se de dos o tres dimensiones. ¿Cual de los siguientes fragmentos de código debería utilizarse para que haya Sobrecarga?:'"
+
+					                :respuesta="'verdadero'" />
 				</div>
 			</slide>
-			<slide id="Sobrecarga">
+			<slide>
 				<div class="slide_">
-					<h3 class="titulo_">Sobrecarga</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos. Sin embargo, antes de explicar en
-						qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios
-						para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
+					<h3 class="titulo_">Ejemplo sobrecarga de constructores:</h3>
+					<p>Hasta hora el planteamiento es correcto, pero si una persona ingresa un tipo de dato numero que no sea entero, se presentaria
+						un error. Para solucionar este error podemos recurrir a la sobrecarga de la función <em>volumen</em> por cada tipo de
+						dato, asi:
 					</p>
+					<div class="">
+						<img src="" alt="">
+						<img src="" alt="">
+					</div>
+					<p>De esta forma se ejecutara la función que corresponda al tipo de dato ingresado por el ususario.</p>
 				</div>
 			</slide>
-			<slide id="Sobreescritura">
+			<slide>
 				<div class="slide_">
-					<h3 class="titulo_">Sobreescritura</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos. Sin embargo, antes de explicar en
-						qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios
-						para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-					</p>
-				</div>
-			</slide>
-			<slide id="Polimorficas">
-				<div class="slide_">
-					<h3 class="titulo_">Variables Polimorficas</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos. Sin embargo, antes de explicar en
-						qué consiste cada tipo de polimorfismo en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios
-						para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-					</p>
-				</div>
-			</slide>
-			<slide id="Genericidad">
-				<div class="slide_">
-					<h3 class="titulo_">Genericidad</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos. Sin embargo, antes de explicar en
-						qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios
-						para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
+					<h3 class="titulo_">Pregunta</h3>
+					<p>Hasta hora el planteamiento es correcto, pero si una persona ingresa un tipo de dato numero que no sea entero, se presentaria
+						un error. Para solucionar este error podemos recurrir a la sobrecarga de la función <em>volumen</em> por cada tipo de
+						dato, asi:
 					</p>
 				</div>
 			</slide>

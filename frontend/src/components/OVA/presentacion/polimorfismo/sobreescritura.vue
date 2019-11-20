@@ -19,95 +19,85 @@
 
 	<div class="">
 		<hooper style="height: 480px">
-			<slide id="Introduccion">
-				<div class="slide_">
-					<h3 class="titulo_">Introducción</h3>
-					<p>Uno de los elementos más importantes de la programación orientada a objetos es el polimorfismo y aunque en un principio
-						este puede ser parecer complicado de entender, no es tan complicado.
-						<br> Esta unidad tiene como objetivos: <br>
-						<ol>
-
-							<li value="1">Comprender el concepto de polimorfismo y su uso en la construcción de algoritmos.</li>
-							<li>Conocer las caracteristicas, usos y diferencias los tipos de polimorfismo utilizados en C++. </li>
-							<li>Comprender el funcionamiento del polimorfismo en la implementación de algoritmos en el lenguaje de programación C++. </li>
-
-						</ol>
-					</p>
-				</div>
-			</slide>
 			<slide>
-				<div class="slide_">
-					<h3 class="titulo_">¿Qué es el Polimorfismo?</h3>
-					<p>En su significado general, el polimorfismo se refiere a la cualidad que tiene algo de tomar múltiples formas o diferentes
-						estados. El polimorfismo es un concepto utilizado en diferentes áreas, tales como la quimica, biologia, bioquimica,
-						genetica e informática. <br> Etimológicamente la palabra polimorfismo tiene origen en el griego: <br>
-						<span class="negrita_">Poli (Muchos)  + Morfo (Forma) +  Ismo( Actividad)</span>
-					</p>
-				</div>
-			</slide>
-			<slide  id="Conceptos">
-				<div class="slide_">
-					<h3 class="titulo_">¿Qué es el Polimorfismo?</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos.
-						Sin embargo, antes de explicar en qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-						</p>
-						<ol>
-							<li value="1"> Herencia</li>
-							<li>Funciones virtuales</li>
-							<li>Constructores virtuales</li>
-							<li>Destructores virtuales</li>
-							<li>Clases abstractas</li>
-						</ol>
-				</div>
-			</slide>
-			<slide>
-				<div class="slide_">
-					<h3 class="titulo_">Herencia</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos.
-						Sin embargo, antes de explicar en qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-						</p>
-						<b-button block href="#" v-on:click="componenteActual = 'introduccion'" variant="info">Introducción</b-button>
-				</div>
-			</slide>
-			<slide id="Sobrecarga">
-				<div class="slide_">
-					<h3 class="titulo_">Sobrecarga</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos.
-						Sin embargo, antes de explicar en qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-						</p>
-				</div>
-			</slide>
-			<slide id="Sobreescritura">
 				<div class="slide_">
 					<h3 class="titulo_">Sobreescritura</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos.
-						Sin embargo, antes de explicar en qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-						</p>
+					<p>La sobreescritura es otro de los tipos de polimorfismo en la programación orientada a objetos y puede ser aplicada dentro
+						de una <em id="jdc">jerarquia de clases</em>. Para que haya sobrecarga se debe cumplir que:
+					</p>
+					<p>Para sobrecargar un método:</p>
+					<ol>
+						<li value="1">Definir un método en la clase Base.</li>
+						<li>Definir un método con el mismo nombre y tipo en la clase derivada. </li>
+						<li>Los parametros que reibe el método deben ser del mismo tipo en la clase Base y en la clase Derivada</li>
+						<li>El comportamiento interno del método debe ser diferente en la clase derivada</li>
+					</ol>
 				</div>
+				<b-tooltip target="jdc" triggers="hover">
+					¡Cuando utilizas <b>Herencia</b>!
+				</b-tooltip>
 			</slide>
-			<slide id="Polimorficas">
+			<slide>
 				<div class="slide_">
-					<h3 class="titulo_">Variables Polimorficas</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos.
-						Sin embargo, antes de explicar en qué consiste cada tipo de polimorfismo en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-						</p>
+					<h4 class="titulo_">Ejemplo:</h4>
+					<p>Supongamos que tenemos una clase base llamada <span class="negrita_">Persona</span> y dos clases derivadas llamadas
+						<span class="negrita_">Estudiante</span> y <span class="negrita_">Docente</span>; queremos mostrar los datos personales
+						del <span class="negrita_" id="est">Estudiante</span> y el <span class="negrita_" id="doc">Docente</span>, pero estos
+						se diferencian en algunas cosas.
+					</p>
+					<div class="">
+						<img src="" alt="">
+						<img src="" alt="">
+						<img src="" alt="">
+					</div>
+					<p>En la clase base <span class="negrita_">Persona</span> definiremos un metodo llamado <span class="negrita_">imprimirDatos()</span>,
+						el cual vamos a sobreescribir en las clases <span class="negrita_">Estudiante</span> y <span class="negrita_">Docente</span>.</p>
 				</div>
+				<b-tooltip target="est" triggers="hover">
+					<p>Los datos de <b>Estudiante</b> son: Nombres, Apellidos, Código, Correo, Edad, Promedio y Semestre</p>
+				</b-tooltip>
+				<b-tooltip target="doc" triggers="hover">
+					<p>Los datos de <b>Docente</b> son: Nombres, Apellidos, Código, Correo, Salario y Experiencia</p>
+				</b-tooltip>
 			</slide>
-			<slide id="Genericidad">
+			<slide>
 				<div class="slide_">
-					<h3 class="titulo_">Genericidad</h3>
-					<p>En esta unidad estudiaremos el polimorfismo en la Programación Orientada a Objetos.
-						Sin embargo, antes de explicar en qué consiste cada tipo de polimorfismo, en la sección 'Conceptos Previos', daremos un repaso a algunos conceptos necesarios para entender el funcionamiento de los diferentes tipos de polimorfismo.
-						<br> Los conceptos que debemos tener en cuenta para comprender el polimorfismo son: <br>
-						</p>
+					<h3 class="titulo_">Ejemplo de sobreescritura:</h3>
+					<p>El metodo <span class="negrita_">imprimirDatos()</span> en la clase base <span class="negrita_">Persona</span> solo retorna
+						un mensaje.
+						<div class="">
+							<img src="" alt="">
+						</div>
 				</div>
 			</slide>
-
+			<slide>
+				<div class="slide_">
+					<h3 class="titulo_">Ejemplo de sobreescritura:</h3>
+					<p>El metodo <span class="negrita_">imprimirDatos()</span> en la clase <span class="negrita_">Estudiante</span> retorna
+						los datos del estudiante.
+						<div class="">
+							<img src="" alt="">
+						</div>
+				</div>
+			</slide>
+			<slide>
+				<div class="slide_">
+					<h3 class="titulo_">Ejemplo de sobreescritura:</h3>
+					<p>El metodo <span class="negrita_">imprimirDatos()</span> en la clase <span class="negrita_">Docente</span> retorna
+						los datos del docente.
+						<div class="">
+							<img src="" alt="">
+						</div>
+				</div>
+			</slide>
+			<slide>
+				<div class="slide_">
+					<h3 class="titulo_">Pregunta</h3>
+					<p>Hasta ahora el planteamiento es correcto, pero si una persona ingresa un tipo de dato númerico que no sea entero, se presentaria un
+						error. Para solucionar esto podemos recurrir a la sobrecarga de la función <em>volumen</em> por cada tipo de dato, asi:
+					</p>
+				</div>
+			</slide>
 			<hooper-pagination slot="hooper-addons" style="color: #666"></hooper-pagination>
 			<hooper-navigation slot="hooper-addons" style="background-color: #666"></hooper-navigation>
 
