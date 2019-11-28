@@ -1,6 +1,7 @@
 <script  type="text/javascript">
 
 	export default {
+		name: 'falsoVerdadero',
 		data() {
 			return {
 				form: {

@@ -4,6 +4,8 @@ from django.urls import include, path
 from .views import *
 
 urlpatterns = [
+    path('crear_estudiante/', EstudianteCreate.as_view(), name = 'crear_estudiante'),
+    path('crear_docente/', DocenteCreate.as_view(), name = 'crear_docente'),
     path('estudiante/', EstudianteList.as_view(), name = 'estudiante_list'),
     path('estudiante/<int:pk>', EstudianteDetail.as_view(), name = 'estudiante_detail'),
     path('docente/', DocenteList.as_view(), name = 'docente_list'),

@@ -13,3 +13,27 @@ padding-right: 58px;
 .subrayar_ {
   text-decoration: underline double;
 }
+
+.redondeado_ {
+  -webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+}
+
+.sombra {
+  -webkit-box-shadow: 0 7px 7px -3px #1c1c1d80;
+  -moz-box-shadow: 0 10px 10px -3px #1c1c1d80;
+}
+
+.fondo {
+  height: 100vh;
+}
+.centrar {
+  display: flex;
+  justify-content: center;
+}
+
+.color1_ {
+/*  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);*/
+background: linear-gradient(70deg, #0072ff 0%, #00d4ff 100%);
+}

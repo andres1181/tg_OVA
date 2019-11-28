@@ -1,6 +1,12 @@
 <script  type="text/javascript">
 
+	import OpcionMultiple from '@/components/preguntas/opcionMultiple.vue'
+
 	export default {
+		name: 'crearOM',
+		components: {
+			OpcionMultiple
+		},
 		data() {
 			return {
 				form: {
@@ -45,12 +51,12 @@
 
 	<div class="">
 		<b-form @submit="onSubmit" @reset="onReset" v-if="show">
-			<h5>Crear pregunta Verdadero/Falso</h5>
+			<h5>Crear pregunta opción múltiple</h5>
 			<br>
 			<b-form-group id="input-group-1" label="Enunciado:">
-				<b-form-textarea id="enunciado"
+				<b-form-textarea id="enunciadoq"
 				                 v-model="form.enunciado"
-                         required
+				                 required
 				                 placeholder="Escriba el enunciado de la pregunta en este cuadro de texto"
 				                 rows="3"
 				                 no-resize>
@@ -62,7 +68,7 @@
 				              required
 				              placeholder="Ingrese aquí la opcion correcta"></b-form-input>
 				<br>
-				<b-form-input id="opcion_1"
+				<b-form-input id="opcion1"
 				              v-model="form.opcion1"
 				              type="text"
 				              required
@@ -89,7 +95,7 @@
 				</b-form-radio-group>
 			</b-form-group>
 			<div>
-				<b-button type="submit" >Guardar</b-button>
+				<b-button type="submit">Guardar</b-button>
 				<b-button type="reset" variant="danger">Limpiar</b-button>
 			</div>
 

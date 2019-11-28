@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import list_ova from '@/components/ova/list_ova.vue'
 import component_ova from '@/components/ova/component_ova.vue'
 import crearPreguntas from '@/components/docente/preguntas/crearPreguntas.vue'
+import registroLogin from '@/components/autenticacion/registroLogin.vue'
 
 
 Vue.use(Router)
@@ -24,6 +25,11 @@ export default new Router({
             path: '/docente/crear_actividades',
             name: 'crearPreguntas',
             component: crearPreguntas
+        },
+        {
+            path: '/authn/registro',
+            name: 'registro',
+            component: registroLogin
         }
     ],
 

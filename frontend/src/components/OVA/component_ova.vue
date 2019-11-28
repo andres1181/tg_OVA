@@ -11,18 +11,9 @@
 	import sobreescritura from '@/components/ova/presentacion/polimorfismo/sobreescritura.vue'
 	import polimorficas from '@/components/ova/presentacion/polimorfismo/polimorficas.vue'
 	import genericidad from '@/components/ova/presentacion/polimorfismo/genericidad.vue'
-	// Vue.component('Leccion', {
-	// 	template: require('./component_screen.html'),
-	// 	props: [contenido]
-	// })
+	import evaluarCodigo from '@/components/preguntas/codigoJudge2.vue'
+	import evaluarCodigo2 from '@/components/preguntas/codigoJudge3.vue'
 
-	Vue.component('evaluacion', {
-		template: require('./component_evaluacion.html')
-	})
-
-	// Vue.component('introduccion', {
-	// 	template: require('./component_introduccion.html')
-	// })
 	Vue.component('actividades', {
 		template: require('./component_introduccion.html'),
 		props: ['componenteLeccion', 'numero', 'estado']
@@ -43,7 +34,9 @@
 			sobrecarga,
 			sobreescritura,
 			polimorficas,
-			genericidad
+			genericidad,
+			evaluarCodigo,
+			evaluarCodigo2
 			// Slide
 		},
 		data() {
@@ -136,48 +129,9 @@
 										<b-button block href="#" v-on:click="componenteActual = 'genericidad'" variant="info">Genericidad</b-button>
 									</b-card-header>
 								</b-card>
-
-								<!-- Inicio lecciones -->
-								<!-- <b-card no-body class="mb-1">
-										<b-card-header header-tag="header" class="p-1" role="tab">
-											<b-button block href="#" v-b-toggle.accordion-2 variant="info">Lecciones</b-button>
-										</b-card-header>
-										<b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
-											<b-card-body>
-												<div v-for="sub in subtemas" :key="sub.id" data-spy="scroll">
-													<div>
-														<br>
-														<div>
-															<div class="row">
-																<div align="left" class="col-md-6">
-																	<span><h6>{{sub.titulo}}</h6></span>
-																</div>
-																<div class="col-md-6" align="right">
-																	<button v-on:click="componenteActual = 'Screen'" name="button" class="btn btn-dark rounded">Ir</button>
-																</div>
-															</div>
-															<br>
-															<div class="row">
-																<div align="left" class="col-md-6">
-																	<h6>Quiz</h6>
-																</div>
-																<div class="col-md-6" align="right">
-																	<button type="button" name="button" class="btn btn-dark rounded">Ir</button>
-																</div>
-															</div>
-														</div>
-														<br>
-														<hr>
-													</div>
-												 <menu-lecciones :subtema="sub.titulo" :numero="sub"></menu-lecciones>
-												</div>
-											</b-card-body>
-										</b-collapse>
-									</b-card> -->
-								<!-- Fin lecciones -->
 								<b-card no-body class="mb-1">
 									<b-card-header header-tag="header" class="p-1" role="tab">
-										<b-button block href="#" v-on:click="componenteActual = 'evaluacion'" variant="info">Examen</b-button>
+										<b-button block href="#" v-on:click="componenteActual = 'evaluarCodigo2'" variant="info">Examen</b-button>
 									</b-card-header>
 									<b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
 										<b-card-body>

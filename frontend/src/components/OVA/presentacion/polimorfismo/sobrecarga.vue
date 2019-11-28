@@ -5,6 +5,7 @@
 
 	import OpcionMultiple from '@/components/preguntas/opcionMultiple.vue'
 	import falsoVerdadero from '@/components/preguntas/falsoYverdadero.vue'
+	
 
 	export default {
 		name: 'sobrecarga',

@@ -12,7 +12,7 @@
 			},
 			opcion1: {
 				type: String,
-				require: true,
+			//	require: true,
 				default: 'X'
 			},
 			opcion2: {

@@ -4,21 +4,23 @@
 	import axios from 'axios'
 
   import falsoVerdadero from '@/components/docente/preguntas/crear_FV.vue'
-  import opcionMuliple from '@/components/docente/preguntas/crear_OM.vue'
+  import crearOM from '@/components/docente/preguntas/crear_OM.vue'
   import arrastrarSoltar from '@/components/docente/preguntas/crear_AyS.vue'
   import enlazar from '@/components/docente/preguntas/crear_Enlazar.vue'
+	import crearCompletar from '@/components/docente/preguntas/crear_Completar.vue'
 
 	export default {
 		components: {
 			falsoVerdadero,
-      opcionMuliple,
+      crearOM,
       arrastrarSoltar,
-      enlazar
+      enlazar,
+			crearCompletar
 		},
 		data() {
 			return {
 				subtemas: [],
-				componenteActual: 'introduccion'
+				componenteActual: 'falsoVerdadero'
 			}
 		},
 
@@ -81,17 +83,22 @@
 								</b-card>
 								<b-card no-body class="mb-1">
 									<b-card-header header-tag="header" class="p-1" role="tab">
-										<b-button block href="#" v-on:click="componenteActual = 'opcionMuliple'" variant="info">Opción Múltiple</b-button>
+										<b-button block href="#" v-on:click="componenteActual = 'crearOM'" variant="info">Opción Múltiple</b-button>
 									</b-card-header>
 								</b-card>
 								<b-card no-body class="mb-1">
 									<b-card-header header-tag="header" class="p-1" role="tab">
-										<b-button block href="#AyS" v-on:click="componenteActual = 'arrastrarSoltar'" variant="info">Arrastrar y Soltar</b-button>
+										<b-button block href="#" v-on:click="componenteActual = 'arrastrarSoltar'" variant="info">Arrastrar y Soltar</b-button>
 									</b-card-header>
 								</b-card>
 								<b-card no-body class="mb-1">
 									<b-card-header header-tag="header" class="p-1" role="tab">
 										<b-button block href="#" v-on:click="componenteActual = 'enlazar'" variant="info">Enlazar</b-button>
+									</b-card-header>
+								</b-card>
+								<b-card no-body class="mb-1">
+									<b-card-header header-tag="header" class="p-1" role="tab">
+										<b-button block href="#" v-on:click="componenteActual = 'crearCompletar'" variant="info">Completar</b-button>
 									</b-card-header>
 								</b-card>
 							</div>

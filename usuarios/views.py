@@ -53,26 +53,49 @@ from .serializers import *
 class EstudianteList(generics.ListCreateAPIView):
     queryset = Estudiante.objects.all()
     serializer_class = EstudianteSerializer
-    permission_classes = (IsAuthenticated, )
-    authentication_class = (TokenAuthentication,)
+#    permission_classes = (IsAuthenticated, )
+    # authentication_class = (TokenAuthentication,)
+
+class EstudianteCreate(generics.CreateAPIView):
+    queryset = Estudiante.objects.all()
+    serializer_class = EstudianteSerializer
+    def create(self, request, *args, **kwargs):
+        response = super().create(request, *args, **kwargs)
+        return Response({
+            'status': 200,
+            'message': 'Testimonials fetched',
+            'data': response.data
+        })
+
+# class EstudianteCreate(APIView):
+#     def post(self, request, format=None):
+#         serializer = EstudianteSerializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save()
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class EstudianteDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Estudiante.objects.all()
     serializer_class = EstudianteSerializer
-    permission_classes = (IsAuthenticated, )
-    authentication_class = (TokenAuthentication,)
+#    permission_classes = (IsAuthenticated, )
+#    authentication_class = (TokenAuthentication,)
 
 class DocenteList(generics.ListCreateAPIView):
     queryset = Docente.objects.all()
     serializer_class = DocenteSerializer
-    permission_classes = (IsAuthenticated, )
-    authentication_class = (TokenAuthentication,)
+
+class DocenteCreate(generics.CreateAPIView):
+    queryset = Docente.objects.all()
+    serializer_class = DocenteSerializer
+#    permission_classes = (IsAuthenticated, )
+#    authentication_class = (TokenAuthentication,)
 
 class DocenteDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Docente.objects.all()
     serializer_class = DocenteSerializer
-    permission_classes = (IsAuthenticated, )
-    authentication_class = (TokenAuthentication,)
+#    permission_classes = (IsAuthenticated, )
+#    authentication_class = (TokenAuthentication,)
 
 class Login(FormView):
     template_name = "login.html"
