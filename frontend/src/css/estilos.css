@@ -6,6 +6,10 @@ padding-right: 58px;
   font-weight: bold;
 }
 
+.navbar_ {
+  height: 5em;
+}
+
 .titulo_ {
   font-family: 'Dosis';
 }
@@ -28,6 +32,11 @@ border-radius: 15px;
 .fondo {
   height: 100vh;
 }
+
+.alert_T {
+  height: 2em;
+  padding: 0.5em;
+}
 .centrar {
   display: flex;
   justify-content: center;
@@ -35,5 +44,70 @@ border-radius: 15px;
 
 .color1_ {
 /*  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);*/
-background: linear-gradient(70deg, #0072ff 0%, #00d4ff 100%);
+ background: linear-gradient(70deg, #36cdb0 0%, #05dae7 100%);
 }
+
+/* button.botonAzul {
+background-color: #36cdb0;
+border: none;
+height: 40px;
+padding: 5px 15px;
+color: #ffffff;
+font-size: 16px;
+font-weight: 300;
+margin-top: 10px;
+margin-right: 10px;
+}
+
+button.botonAzul:hover {
+cursor: pointer;
+background-color: linear-gradient(70deg, #36cdb0 0%, #05dae7 100%);;
+} */
+
+button.botonAzul {
+background: #36cdb0; /*-webkit-gradient(linear, left top, right top, from(#0072ff), to(#00d4ff)); */
+/* background: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%); */
+border: none;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+border-radius:5px;
+height: 40px;
+padding: 5px 15px;
+color: #ffffff;
+font-size: 16px;
+font-weight: 300;
+font-weight:bold;
+margin-top: 10px;
+margin-right: 10px;
+}
+
+button.botonAzul:hover {
+cursor: pointer;
+font-size: 17px;
+background: -webkit-gradient(linear, left top, right top, from(#36cdb0), to(#05dae7));
+background: linear-gradient(70deg, #36cdb0 0%, #05dae7 100%);
+}
+
+button.change {
+background-color: linear-gradient(70deg, #0072ff 0%, #00d4ff 100%);
+border: none;
+height: 40px;
+padding: 5px 15px;
+color: #ffffff;
+font-size: 16px;
+font-weight: 300;
+margin-top: 10px;
+margin-right: 10px;
+}
+
+button.change:hover {
+cursor: pointer;
+background-color: #F89900;
+}
+
+button:active {
+outline: none;
+border: none;
+}
+
+button:focus {outline:0;}

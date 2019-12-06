@@ -5,16 +5,16 @@ from django.contrib.auth.models import AbstractUser
 class Usuario(models.Model):
     id = models.AutoField(primary_key = True)
     nombres = models.CharField('Nombres', max_length=30)
-    apellidos = models.CharField('Apellidos', max_length=30)
-    username = models.CharField('NickName', max_length=10) #codigo Estudiante
+    apellidos = models.CharField('Apellidos', max_length=30) #codigo Estudiante
     email = models.EmailField()
     password = models.CharField('Contraseña', max_length=10)
 
     # def _str_(self):
     #     return '{0},{1},{2}'.format(self.username,self.nombres, self.apellidos)
-
+#---------------Revisar--------------------
     class Meta:
        abstract = True
+#------------------------------------------
 #-----------------------------------------------------------------
 # class Usuario(AbstractUser):
 #     id = models.AutoField(primary_key = True)
@@ -22,14 +22,18 @@ class Usuario(models.Model):
 #     def __str__(self):
 
 class Estudiante(Usuario):
-    codigo_estudiante = models.CharField(unique=True, max_length=10) #codigo Estudiante
+#     codigo_estudiante = models.CharField(unique=True, max_length=10) #codigo Estudiante
+    username = models.CharField('Código Estudiante', unique=True, max_length=10)
+    activo = models.BooleanField('Activo',default=True)
     plan = models.CharField(max_length=4)
 
     # def _str_(self):
     #     return '{0},{1},{2},{3}'.format(self.username,self.nombres, self.apellidos, self.codigo_estudiante)
 
 class Docente(Usuario):
-    codigo_docente = models.CharField(unique=True, max_length=10) #codigo de  profesor
+    username = models.CharField('Código Docente', unique=True, max_length=10)
+    activo = models.BooleanField('Activo',default=True)
+#     codigo_docente = models.CharField(unique=True, max_length=10) #codigo de  profesor
 
     # def _str_(self):
     #     return '{0},{1},{2},{3}'.format(self.username,self.nombres, self.apellidos, self.codigo_docente)

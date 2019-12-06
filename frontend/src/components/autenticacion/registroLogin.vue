@@ -20,22 +20,22 @@
 		},
 
 		methods: {
-			getsubtemas() {
-				const path = 'http://localhost:8000/api_ova/1.0/Subtema/'
-				axios
-					.get(path)
-					.then(response => {
-						this.subtemas = response.data
-					})
-					.catch(error => {
-						console.log(error)
-					})
-			}
+			// getsubtemas() {
+			// 	const path = 'http://localhost:8000/api_ova/1.0/Subtema/'
+			// 	axios
+			// 		.get(path)
+			// 		.then(response => {
+			// 			this.subtemas = response.data
+			// 		})
+			// 		.catch(error => {
+			// 			console.log(error)
+			// 		})
+			// }
 		},
 
-		created() {
-			this.getsubtemas()
-		}
+		// created() {
+		// 	this.getsubtemas()
+		// }
 	}
 
 </script>

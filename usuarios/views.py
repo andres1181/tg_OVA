@@ -16,44 +16,21 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 from .models import *
 #from django.contrib.auth.models import User, auth
-from .serializers import *
+from .serializers import EstudianteSerializer, DocenteSerializer
+
+from .permisos import IsOwnerProfileOrReadOnly
 #----------------------------------------------------------------------------------
-# def registro(request):
-#
-#     if request.method == 'POST':
-#         nombres = request.POST['nombres']
-#         apellidos = request.POST['apellidos']
-#         codigo = request.POST['codigo']
-#         usuario = request.POST['usuario']
-#         plan = request.POST['plan']
-#         email = request.POST['email']
-#         contrasena1 = request.POST['contrasena1']
-#         contrasena2 = request.POST['contrasena2']
-#
-#         if contrasena1==contrasena2:
-#             if Estudiante.objects.filter(username=usuario).exists() or Estudiante.objects.filter(codigo_estudiante=codigo).exists():
-#                 print('El usuario ya se encuentra registrado')
-#             elif Estudiante.objects.filter(email=email).exists():
-#                 print('El correo ya existe')
-#             else:
-#                 user = Estudiante.objects.create_user(username=usuario, first_name=nombres, last_name=apellidos, password=contrasena1, email=email, codigo_estudiante=codigo, plan=plan, is_active=True, is_staff=False, is_superuser=False)
-#                 user = user.save();
-#                 print('Usuario Creado')
-#
-#         else:
-#             print('Las contraseñas no coinciden')
-#
-#         return redirect('curso/index')
-#         #render(request, 'index.html', {})
-#             #redirect('/curso/index')
-#     else:
-#         return render(request, 'registro.html', {})
+
 # -----------------------------------------------------------------------------------
 
 class EstudianteList(generics.ListCreateAPIView):
     queryset = Estudiante.objects.all()
     serializer_class = EstudianteSerializer
-#    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated, )
+
+    # def perform_create(self, serializer):
+    #     user=self.request.user
+    #     serializer.save(user=user)
     # authentication_class = (TokenAuthentication,)
 
 class EstudianteCreate(generics.CreateAPIView):
@@ -66,36 +43,43 @@ class EstudianteCreate(generics.CreateAPIView):
             'message': 'Testimonials fetched',
             'data': response.data
         })
-
-# class EstudianteCreate(APIView):
-#     def post(self, request, format=None):
-#         serializer = EstudianteSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+#
+#
+#
 class EstudianteDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Estudiante.objects.all()
     serializer_class = EstudianteSerializer
+    permission_classes = (IsAuthenticated, IsOwnerProfileOrReadOnly)
+#    authentication_class = (TokenAuthentication,)
+
+# class DocenteCreate(generics.CreateAPIView):
+#     queryset = Docente.objects.all()
+#     serializer_class = DocenteSerializer
 #    permission_classes = (IsAuthenticated, )
 #    authentication_class = (TokenAuthentication,)
 
+
+#    permission_classes = (IsAuthenticated, )
+#    authentication_class = (TokenAuthentication,)
 class DocenteList(generics.ListCreateAPIView):
     queryset = Docente.objects.all()
     serializer_class = DocenteSerializer
-
-class DocenteCreate(generics.CreateAPIView):
-    queryset = Docente.objects.all()
-    serializer_class = DocenteSerializer
 #    permission_classes = (IsAuthenticated, )
-#    authentication_class = (TokenAuthentication,)
 
+    def perform_create(self, serializer):
+        user=self.request.user
+        serializer.save(user=user)
+#
+# class DocenteCreate(generics.CreateAPIView):
+#     queryset = Docente.objects.all()
+#     serializer_class = DocenteSerializer
+# #    permission_classes = (IsAuthenticated, )
+# #    authentication_class = (TokenAuthentication,)
+#
 class DocenteDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Docente.objects.all()
     serializer_class = DocenteSerializer
-#    permission_classes = (IsAuthenticated, )
-#    authentication_class = (TokenAuthentication,)
+    permission_classes = (IsAuthenticated, IsOwnerProfileOrReadOnly)
 
 class Login(FormView):
     template_name = "login.html"

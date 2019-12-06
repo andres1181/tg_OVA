@@ -41,9 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'djoser',
+
     'rest_framework',
+
     'rest_framework.authtoken',
+
     'bootstrap4',
+
     'usuarios',
     'Gestion_OVA',
 
@@ -52,15 +58,22 @@ INSTALLED_APPS = [
 #AUTH_USER_MODEL = 'usuarios.Usuario'
 
 
-# REST_FRAMEWORK = {#
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework.authentication.TokenAuthentication',
-#     ),
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.IsAuthenticated',
-#     ),
+REST_FRAMEWORK = {#
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+# JWT_AUTH = {
+# 'JWT_ALLOW_REFRESH': True,
+# 'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),
+# 'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 # }
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

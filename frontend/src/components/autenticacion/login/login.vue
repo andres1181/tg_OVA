@@ -35,7 +35,7 @@
 <template>
 
 	<div>
-		<b-navbar class="color1_" id="barraLogin" fixed="top" toggleable="lg" type="dark" variant="info">
+		<b-navbar class="color1_ navbar_" id="barraLogin" fixed="top" toggleable="lg" type="dark" variant="info">
 			<b-navbar-brand href="#">Logo</b-navbar-brand>
 
 			<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>

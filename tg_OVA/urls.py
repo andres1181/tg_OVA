@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from Gestion_OVA import views
-from rest_framework.authtoken import views
+#from rest_framework.authtoken import views
+from rest_framework_simplejwt import views as jwt_views
 from usuarios.views import Login, Logout
 #from Gestion_Usuarios.api import UserAPI
 
@@ -28,7 +29,12 @@ urlpatterns = [
 # #    path('register/1.0/', include(('Gestion_Usuarios.urls', 'api'))),
 #     path('curso/', include('Gestion_ova.urls')),
 #     path('register/', include('usuarios.urls')),
-    path('api_generate_token/', views.obtain_auth_token),
-    path('login/', Login.as_view()),
-    path('logout/', Logout.as_view()),
+#    path('api_generate_token/', views.obtain_auth_token),
+    path('api_generate_token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api_generate_token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+    # path('login/', Login.as_view()),
+    # path('login/', Login.as_view()),
+    # path('logout/', Logout.as_view()),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
 ]
